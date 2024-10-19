@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Texture and Skin Count Search Tool</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./css/pallate.css" />
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    /> -->
+  </head>
+  <body>
+    <div class="header">
+      <div class="checkboxes">
+        <div class="filterOne">
+          <label tabindex="0" for="restrictedSearch"
+            ><input type="checkbox" id="restrictedSearch" />Restricted
+            Search</label
+          >
+          <label tabindex="0" for="skinCountToggle"
+            ><input type="checkbox" id="skinCountToggle" /> Skin Count
+            <select id="skinCount" tabindex="0" name="skinCount" disabled="no">
+              <!-- Initially hidden -->
+              <!-- Options for skin count -->
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select></label
+          >
+        </div>
+        <div class="wrap filterMain">
+          <div class="filterSub">
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Alb" /> Alb</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Nrm" /> Nrm</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Spm" /> Spm</label
+            >
+          </div>
+          <div class="filterSub">
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Emc" /> Emc</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Emm" /> Emm</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="EmmMsk" />
+              EmmMsk</label
+            >
+          </div>
+          <div class="filterSub">
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Gn0" /> Gn0</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Gn1" /> Gn1</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Gn2" /> Gn2</label
+            >
+          </div>
+          <div class="filterSub">
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Gn3" /> Gn3</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Gn4" /> Gn4</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Gn5" /> Gn5</label
+            >
+          </div>
+          <div class="filterSub">
+            <label tabindex="0">
+              <input type="checkbox" name="texture" value="AO" /> AO</label
+            >
+            <label tabindex="0"
+              ><input type="checkbox" name="texture" value="Ind" /> Ind</label
+            >
+          </div>
+        </div>
+        <!-- Add more checkboxes for each texture type -->
+      </div>
+      <div class="button-bar">
+        <button
+          id="search"
+          class="chip-btn primary-chip-btn"
+          onclick="searchTextures()"
+        >
+          Search
+        </button>
+        <button id="search" class="chip-btn" onclick="expandAll()">
+          Expand All
+        </button>
+        <button id="search" class="chip-btn" onclick="collapseAll()">
+          Collapse All
+        </button>
+      </div>
+    </div>
+    <ul id="searchResults"></ul>
+    <script defer src="./scripts/renderer.js"></script>
+  </body>
+</html>
