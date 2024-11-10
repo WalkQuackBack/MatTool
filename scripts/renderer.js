@@ -137,11 +137,15 @@ async function displayResults(results) {
           // TODO: fix hack
           // materialButton.classList.toggle("active");
           // textureList.classList.toggle("active");
+          console.log("copy");
           navigator.clipboard
             .writeText(texture)
             .then(() => {
               subCopyBtn.classList.add("yippee");
-              window.setTimeout(() => subCopyBtn.classList.remove("yippee"), 500);
+              window.setTimeout(
+                () => subCopyBtn.classList.remove("yippee"),
+                500
+              );
             })
             .catch((err) => {
               // console.error("Failed to copy: ", err);
