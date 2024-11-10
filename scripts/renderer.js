@@ -133,6 +133,22 @@ async function displayResults(results) {
         subCopyBtn.classList.add("copy-btn");
         subCopyBtn.setAttribute("tabindex", i);
 
+        subCopyBtn.addEventListener("click", function (e) {
+          // TODO: fix hack
+          materialButton.classList.toggle("active");
+          textureList.classList.toggle("active");
+          navigator.clipboard
+            .writeText(texture)
+            .then(() => {
+              subCopyBtn.classList.add("yippee");
+              window.setTimeout(() => subCopyBtn.classList.remove("yippee"), 500);
+            })
+            .catch((err) => {
+              // console.error("Failed to copy: ", err);
+              subCopyBtn.classList.add("uhoh");
+            });
+        });
+
         // li.textContent = `${texture} (${getTextureType(texture)})`;
         li.append(maintext, supportingtext, subCopyBtn);
         textureList.append(li);
