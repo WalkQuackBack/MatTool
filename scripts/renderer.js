@@ -135,8 +135,8 @@ async function displayResults(results) {
 
         subCopyBtn.addEventListener("click", function (e) {
           // TODO: fix hack
-          materialButton.classList.toggle("active");
-          textureList.classList.toggle("active");
+          // materialButton.classList.toggle("active");
+          // textureList.classList.toggle("active");
           navigator.clipboard
             .writeText(texture)
             .then(() => {
