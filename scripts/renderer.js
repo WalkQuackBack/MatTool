@@ -169,7 +169,7 @@ async function displayResults(results) {
         materialButton.classList.toggle("active");
         textureList.classList.toggle("active");
         navigator.clipboard
-          .writeText(materialName)
+          .writeText(item.key)
           .then(() => {
             copyBtn.classList.add("yippee");
             window.setTimeout(() => copyBtn.classList.remove("yippee"), 500);
